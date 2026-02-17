@@ -1,4 +1,4 @@
-FROM golang:1.22-alpine AS build
+FROM golang:1.26-alpine AS build
 WORKDIR /src
 
 COPY go.mod ./
@@ -13,5 +13,5 @@ WORKDIR /
 
 COPY --from=build /out/payload-server /payload-server
 
-EXPOSE 30721
+EXPOSE 8080
 ENTRYPOINT ["/payload-server"]
