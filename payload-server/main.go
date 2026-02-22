@@ -23,8 +23,6 @@ func fillData(size int) []byte {
 func handler(payload []byte) http.HandlerFunc {
         return func(w http.ResponseWriter, r *http.Request) {
                 w.Header().Set("Content-Type", "application/octet-stream")
-                //w.Header().Set("Content-Length", contentLength)
-                //w.WriteHeader(http.StatusOK)
                 w.Write(payload)
         }
 }
